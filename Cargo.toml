@@ -1,0 +1,35 @@
+[package]
+name = "rdd"
+version = "0.1.0"
+edition = "2024"
+authors = ["Sarang Vehale sarangvehale2@gmail.com"]
+description = "A modern, safe and fast replacement for GNU dd."
+license = "MIT"
+repository = "https://github.com/SarangVehale/rdd" 
+readme = "README.md"
+keywords = ["dd", "disk", "copy", "cli", "backup"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+# For robust command-line argument parsing 
+clap = {version = "4.5.4", features = ["derive", "cargo"]}
+
+# For beautiful and functional progress bars
+indicatif = { version = "0.17.8", features = ["tokio"] }
+
+# For high-performance, multi-producer, multi-consumer channels
+crossbeam-channel = "0.5.12"
+
+# For the fast, modern BLAKE3 hashing algorithm 
+blake3 = "1.5.1"
+
+# For the standard and widely used SHA-256 hashing algorithm
+sha2 = "0.10.8"
+
+# For ergonomic and clean error handling
+thiserror = "1.0.58"
+
+# For POSIX-specific APIs like O_DIRECT (for advances performance tuning).
+# This is platform-specific, so we'll handle it carefully in the code.
+[target.'cfg(unix)'.dependencies]
+nix = { version = "0.28.0", features = ["fs"] }
