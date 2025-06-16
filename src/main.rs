@@ -26,8 +26,8 @@ mod utils;
 
 use crate::cli::{Cli, Command};
 use crate::config::CopyConfig;
-create::core::copy::run_singlethreaded_copy;
-use crate::error::{RddError, RddResult};
+use crate::core::copy::run_singlethreaded_copy;
+use crate::error::{RddError,RddResult};
 use clap::Parser;
 use std::process::ExitCode;
 
