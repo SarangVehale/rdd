@@ -65,6 +65,10 @@ pub struct CopyArgs {
     /// Skip N blocks of 'bs size at the start of the input.
     #[arg(long, default_value_t = 0)]
     pub skip: u64,
+    
+    /// Seek N blocks of 'bs' size at the start of the output.
+    #[arg(long, default_value_t=0)]
+    pub seek: u64,
 
     /// [Enhancement] Hashing algorithm to verify data integrity during the copy.
     #[arg(long, value_enum)]
